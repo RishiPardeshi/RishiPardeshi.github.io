@@ -1,0 +1,540 @@
+@import url(fonts/PTSans-Bold.ttf);
+@import url(fonts/Nunito/Nunito-Bold.ttf);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #111111;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+nav{
+    z-index: 5;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(17 17 17 / 89%);
+}
+nav a{
+    position: relative;
+    color: white;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5em;
+    padding: 23px 42px;
+    transition: 0.2s ease-in-out;
+}
+nav a:hover{
+    color: rgb(130, 174, 255);
+    text-shadow: 0px 0 4px rgb(130, 174, 255);
+}
+.home
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.home .social{
+    display: flex;
+    z-index: 22;
+}
+.home .social a{
+    text-decoration: none;
+}
+.home .social .media{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.home .social .media i{
+    position: relative;
+    color: #fff;
+    font-size: 1.5em;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 29px 32px;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+}
+.home .social .media .github{
+    background: #1a1a1a;
+}
+.home .social .media .github::after{
+    font-family: 'Nunito', sans-serif;
+    content: 'github';
+    position: absolute;
+    bottom: -32px;
+    font-size: 0.6em;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 7vh;
+    transform: scale(0);
+    transition: all 0.3s ease 0.5s;
+}
+.home .social .media .github:hover::after{
+    transform: scale(1);
+}
+.home .social .media .github:hover{
+    background: #141414;
+}
+.home .social .media .instagram{
+    background: #1a1a1a;
+}
+.home .social .media .instagram::after{
+    font-family: 'Nunito', sans-serif;
+    content: 'instagram';
+    position: absolute;
+    bottom: -32px;
+    font-size: 0.6em;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 7vh;
+    transform: scale(0);
+    transition: all 0.3s ease 0.5s;
+}
+.home .social .media .instagram:hover::after{
+    transform: scale(1);
+}
+.home .social .media .instagram:hover{
+    background: #63008dd5;
+}
+.home .social .media .whatsapp{
+    background: #1a1a1a;
+}
+.home .social .media .whatsapp::after{
+    font-family: 'Nunito', sans-serif;
+    content: 'whatsapp';
+    position: absolute;
+    bottom: -32px;
+    font-size: 0.6em;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 7vh;
+    transform: scale(0);
+    transition: all 0.3s ease 0.5s;
+}
+.home .social .media .whatsapp:hover::after{
+    transform: scale(1);
+}
+.home .social .media .whatsapp:hover{
+    background: #04a109ab;
+}
+.home .social .media .twitter{
+    background: #1a1a1a;
+}
+.home .social .media .twitter::after{
+    font-family: 'Nunito', sans-serif;
+    content: 'twitter';
+    position: absolute;
+    bottom: -32px;
+    font-size: 0.6em;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 7vh;
+    transform: scale(0);
+    transition: all 0.3s ease 0.5s;
+}
+.home .social .media .twitter:hover::after{
+    transform: scale(1);
+}
+.home .social .media .twitter:hover{
+    background: #0069d5a6;
+}
+.display{
+    position: relative;
+    top: 53px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.display .box{
+    /* overflow: hidden; */
+    height: 75px;
+}
+.display .box .wrap{
+    top: -84px;
+    transition: all 0.4s ease-in;
+}
+.display h1{
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    font-size: 3em;
+    padding: 12px;
+    text-shadow: 0px 0 5px #fff;
+}
+.display h1 a{
+    color: #69aafb;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0px 0 5px #69aafb;
+    text-transform: capitalize;
+}
+
+.about
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.about .card{
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    box-shadow: 0px 11px 31px 0px #00000078;
+    color: white;
+    border-radius: 8px;
+    padding: 36px 5px;
+}
+.about .card h1{
+    font-size: 3em;
+}
+.about .card .same{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 39px 39px 68px;
+}
+.about .card .same p{
+    font-size: 1.3em;
+    line-height: 29px;
+}
+.about .card .same p a{
+    position: relative;
+    text-decoration: none;
+    color: rgb(43, 160, 255);
+}
+.about .card .same p a::before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: rgb(43, 160, 255);
+    transition: all 0.2s ease;
+}
+.about .card .same p a:hover::before{
+    width: 100%;
+}
+.about .card .same .circle{
+    width: 125px;
+    height: 125px;
+    min-width: 125px;
+    min-width: 125px;
+    background: chocolate;
+    border-radius: 50%;
+    background: url(assets/logo.png), rgb(255, 255, 255);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.about .card .lang{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 39px;
+}
+.about .card .lang a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 24px;
+}
+.about .card .lang a span{
+    position: relative;
+    font-size: 1.3em;
+    color: white;
+    text-transform: capitalize;
+    transition: all 0.2s ease-in-out;
+}
+.about .card .lang a span::before{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: rgb(43, 160, 255);
+    transition: all 0.2s ease;
+}
+.about .card .lang a span:hover::before{
+    width: 100%;
+}
+.about .card .lang a span:hover{
+    color: rgb(43, 160, 255);
+
+}
+.about .card .lang a .circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgb(43, 160, 255);
+    margin: 13px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit:fill;
+}
+.about .card .lang a .circle img{
+    width: 70px;
+}
+
+.projects{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.projects .card{
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    box-shadow: 0px 11px 31px 0px #00000078;
+    color: white;
+    border-radius: 8px;
+    padding: 36px 5px;
+}
+.projects .card h1{
+    font-size: 3em;
+    margin-bottom: 39px;
+}
+.projects .card .center{
+    position: relative;
+    width: 60%;
+    overflow: hidden;
+}
+.projects .card .center img{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comming{
+    width: 100%;
+    height: 100vh;
+    z-index: 100000;
+    display: flex;
+    background-color: #111111;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    display: none;
+}
+main{
+    display: none;
+}
+.comming h2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px 67px;
+    font-size: 2em;
+    color: #ff0084;
+    text-align: center;
+}
+.comming .main .wave{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.comming .main .man{
+    z-index: 2;
+    margin: 77px;
+}
+.comming .main .man img{
+    width: 30em;
+}
+.comming .main .info{
+    padding: 66px;
+    width: 100%;
+}
+.comming .main .info h1{
+    padding: 9px 0px;
+    font-size: 4em;
+}
+.comming .main .info p{
+    line-height: 21px;
+}
+.comming .main .info .countdown{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 21px 0px;
+    font-family: monospace;
+    justify-content: center;
+    align-items: center;
+}
+.comming .main .info .countdown div{
+    background: #fff;
+    width: 106px;
+    color: #ff0084;
+    height: 106px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    border-radius: 9px;
+    margin: 0px 12px 12px 0px;
+}
+.comming .main .info .countdown div h1{
+    padding: 0;
+}
+.comming .main .info .countdown div p{
+    text-transform: capitalize;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #000;
+}
+.comming .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.comming .main .social{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 54px;
+    z-index: 2;
+}
+.comming .main .social .media a{
+    text-decoration: none;
+}
+.comming .main .social .media a i{
+    color: #fff;
+    padding: font;
+    font-size: 1.4em;
+    margin: 15px;
+    transition: all 0.2s ease-in;
+}
+.comming .main .social .media a .instagram:hover{
+    color: rgb(214, 49, 255);
+}
+.comming .main .social .media a .twitter:hover{
+    color: rgb(49, 162, 255);
+}
+.comming .main .social .media a .whatsapp:hover{
+    color: rgb(49, 255, 59);
+
+}
+.loader{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1d2430;
+}
+.loader h1{
+    color: aliceblue;
+    font-family: monospace;
+    font-size: 3em;
+    position: relative;
+    top: -58px;
+}
+@media screen and (max-width: 1190px) {
+    
+    
+    .comming .main .man img{
+        display: none;
+    }
+    
+    .comming{
+        z-index: 100000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    .comming .main .info{
+        /* width: 100% !important; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        padding: 2px
+    }
+    .comming .main .info p{
+        text-align: center;
+        width: 62%;
+    }
+}
+@media screen and (max-width: 480px) {
+    
+    .loader img{
+        width: 80vw;
+    }
+}
+@media screen and (max-width: 625px) {
+    
+    html{
+        font-size: 74%;
+    }
+    .comming .main .info p{
+        text-align: center;
+        width: 100%;
+    }
+    .comming h2{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 374px) {
+    
+    html{
+        font-size: 56%;
+    }
+    
+.comming .main .info .countdown div{
+    width: 73px;
+    height: 73px;
+}
+}
