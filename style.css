@@ -433,7 +433,7 @@ background: #257bfd9e;
     text-align: center;
     padding: 12px;
     transition: all 0.2s cubic-bezier(0.49, -0.37, 0, 1);
-    height: 18%;
+    height: 6vh;
     overflow: hidden;
 }
 .projects .card .splide .splide__list .splide__slide:hover h1{
@@ -861,11 +861,17 @@ main{
     .about .card .same{
         flex-direction: column-reverse;
     }
+    .projects .card .splide .splide__list .splide__slide h1{
+        height: 4vh;
+    }
 }
 @media screen and (max-width: 480px) {
     
     .loader img{
         width: 80vw;
+    }
+    .projects .card .splide .splide__list .splide__slide h1{
+        height: 4vh;
     }
 }
 @media screen and (max-width: 625px) {
@@ -928,6 +934,9 @@ main{
     }
     .follow .social a .media i{
         margin: 25px;
+    }
+    .projects .card .splide .splide__list .splide__slide h1{
+        height: 4vh;
     }
 }
 @media screen and (max-width: 506px){
