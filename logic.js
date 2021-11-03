@@ -1,3 +1,6 @@
+function loaded(){
+	document.getElementById("comming").style.display = 'flex';
+	document.getElementById("loader").style.display = 'none';
 let wrap = document.getElementById('wrap');
 
 
@@ -56,18 +59,7 @@ css.type = "text/css";
 css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
 document.body.appendChild(css);
 
-$('.center').slick({
-	dots: true,
-	infinite: true,
-	speed: 300,
-	slidesToShow: 1,
-	adaptiveHeight: true,
-	slidesToScroll: 1,
-	autoplay: true,
-	autoplaySpeed: 2000
-});
-
-var countDownDate = new Date("Nov 4, 2021 10:00:00").getTime();
+var countDownDate = new Date("Oct 4, 2021 10:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -101,8 +93,26 @@ var x = setInterval(function() {
     clearInterval(x);
   }
 }, 1);
+count = 1
+document.getElementById('menu').addEventListener('click',()=>{
+	document.getElementById('nav').style.height = '49%'
+	document.getElementById('nav').classList.add('show')
+	document.getElementById('menu').classList.add('fas','fa-times')
+	if (count % 2 == 0){
+		document.getElementById('menu').classList.remove('fas','fa-times')
+		document.getElementById('menu').classList.add('fas','fa-bars')
+		document.getElementById('nav').classList.remove('show')
+		document.getElementById('nav').style.height = '7%'
+	}
+	count++
+})
 
-function loaded(){
-	document.getElementById("comming").style.display = 'flex';
-	document.getElementById("loader").style.display = 'none';
 }
+
+document.addEventListener( 'DOMContentLoaded', function () {
+	new Splide( '.splide', {
+		  cover      : true,
+		  heightRatio: 0.5,
+		  rewind: true
+	} ).mount();
+  } );

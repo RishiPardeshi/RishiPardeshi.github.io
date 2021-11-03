@@ -14,14 +14,35 @@ html{
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar{
+    background: transparent;
+    width: 3px;
+}
+::-webkit-scrollbar-button{
+    display: none;
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(19, 149, 255);
+}
+
 nav{
-    z-index: 5;
+    z-index: 25;
     width: 100%;
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgb(17 17 17 / 89%);
+    transition: all 0.2s ease;
+}
+nav #menu{
+    display: none;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px 24px;
+    font-size: 1.6em;
 }
 nav a{
     position: relative;
@@ -33,6 +54,10 @@ nav a{
     padding: 23px 42px;
     transition: 0.2s ease-in-out;
 }
+
+nav.show a{
+    transform: scale(1);
+}
 nav a:hover{
     color: rgb(130, 174, 255);
     text-shadow: 0px 0 4px rgb(130, 174, 255);
@@ -40,7 +65,7 @@ nav a:hover{
 .home
 {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,8 +178,29 @@ nav a:hover{
 .home .social .media .twitter:hover::after{
     transform: scale(1);
 }
+.home .social .media .telegram{
+    background: #1a1a1a;
+}
+.home .social .media .telegram::after{
+    font-family: 'Nunito', sans-serif;
+    content: 'telegram';
+    position: absolute;
+    bottom: -32px;
+    font-size: 0.6em;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 7vh;
+    transform: scale(0);
+    transition: all 0.3s ease 0.5s;
+}
+.home .social .media .telegram:hover::after{
+    transform: scale(1);
+}
+.home .social .media .telegram:hover{
+background: #4189f59e;
+}
 .home .social .media .twitter:hover{
-    background: #0069d5a6;
+background: #257bfd9e;
 }
 .display{
     position: relative;
@@ -164,6 +210,7 @@ nav a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 179px;
 }
 .display .box{
     /* overflow: hidden; */
@@ -253,6 +300,7 @@ nav a:hover{
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center;
+    margin: 18px;
 }
 
 .about .card .lang{
@@ -313,11 +361,12 @@ nav a:hover{
 
 .projects{
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
+    margin: 100px 0px;
 }
 
 .projects .card{
@@ -327,6 +376,7 @@ nav a:hover{
     justify-content: center;
     align-items: center;
     width: 80%;
+    height: auto;
     box-shadow: 0px 11px 31px 0px #00000078;
     color: white;
     border-radius: 8px;
@@ -336,17 +386,133 @@ nav a:hover{
     font-size: 3em;
     margin-bottom: 39px;
 }
-.projects .card .center{
-    position: relative;
-    width: 60%;
-    overflow: hidden;
+.projects .card .splide{
+    width: 78%;
+    height: auto;
 }
-.projects .card .center img{
-    width: 100%;
-    overflow: hidden;
+.projects .card .splide .splide__list .splide__slide{
+    position: relative;
+    background: blueviolet;
+    height: 272px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.projects .card .splide .splide__list .mesh{
+    background: url(./assets/faceMesh.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.projects .card .splide .splide__list .hand{
+    background: url(./assets/handTracker.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.projects .card .splide .splide__list .mask{
+    background: url(./assets/maskdetector.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.projects .card .splide .splide__list .game{
+    background: url(./assets/galaxy.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.projects .card .splide .splide__list .splide__slide h1{
+    margin: 0;
+    position: absolute;
+    bottom: 0px;
+    font-size: 1.3em;
+    font-weight: 100;
+    background: #000000b0;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    transition: all 0.2s cubic-bezier(0.49, -0.37, 0, 1);
+    height: 18%;
+    overflow: hidden;
+}
+.projects .card .splide .splide__list .splide__slide:hover h1{
+    background: #000000b0;
+    height: 100%;
+    color: #5096ff;
+    overflow: scroll;
+}
+.projects .card .splide .splide__list .splide__slide h1 p{
+    color: #fff;
+    z-index: 2;
+    text-align: center;
+    padding: 46px;
+    font-size: 0.9em;
+    line-height: 30px;
+    transition: all 0.2s ease-in-out;
+}
+.projects .card .splide .splide__list .splide__slide h1 p a{
+    text-decoration: none;
+    color: #5096ff;
+}
+.projects .card .splide .splide__list .splide__slide h1 p a:hover{
+    border-bottom: 1px solid;
+}
+
+
+.contacts{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 100px 0px;
+}
+.contacts .card{
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    box-shadow: 0px 11px 31px 0px #00000078;
+    color: white;
+    border-radius: 8px;
+    padding: 36px 5px;
+}
+.contacts .card h1{
+    
+    font-size: 3em;
+    margin-bottom: 39px;
+}
+
+.contacts .card .details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 23px;
+}
+.contacts .card .details .det{
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contacts .card .details .det a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    transition: all 0.2s ease-out;
+}
+.contacts .card .details .det a i{
+    margin: 8px;
+}
+
+.contacts .card .details .det a:hover{
+    color: #6ba6ff;
 }
 
 .comming{
@@ -361,6 +527,189 @@ nav a:hover{
     color: #fff;
     display: none;
 }
+
+.follow{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 56px 0px;
+}
+.follow h1{
+    font-size: 3em;
+    margin-bottom: 39px;
+}
+.follow .social{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.follow .social a{
+    text-decoration: none;
+    color: #fff;
+}
+.follow .social a .media i{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-size: 2em;
+    margin: 43px;
+    animation: animate 2s ease-in-out infinite;
+    transition: all 0.2s ease-in;
+}
+@keyframes animate {
+    0%{
+        position: relative;
+        top: 3px;
+    }
+    50%{
+        position: relative;
+        top: -3px;
+    }
+    100%{
+        position: relative;
+        top: 3px;
+    }
+}
+.follow .social a .media .github{
+    animation-delay: 0s;
+}
+.follow .social a .media .instagram{
+    animation-delay: 0.25s;
+}
+.follow .social a .media .twitter{
+    animation-delay: 0.50s;
+}
+.follow .social a .media .whatsapp{
+    animation-delay: 0.75s;
+}
+.follow .social a .media .telegram{
+    animation-delay: 0.100s;
+}
+.follow .social a .media .instagram:hover{
+    color: #cc03f1;
+
+}
+.follow .social a .media .twitter:hover{
+    color: #00a1ff;
+}
+.follow .social a .media .whatsapp:hover{
+    color: #00ff4e;
+}
+.follow .social a .media .telegram:hover{
+    color: #4dc5ff;
+}
+
+.follow .social a .media .telegram::after{
+    font-family: 'Nunito', sans-serif;
+    content: 'telegram';
+    position: absolute;
+    bottom: -39px;
+    left: -19px;
+    font-size: 0.6em;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 7vh;
+    transform: scale(0);
+    transition: all 0.3s ease 0.5s;
+}
+.follow .social a .media .telegram:hover::after{
+    transform: scale(1);
+}
+
+.follow .social a .media .twitter::after{
+    font-family: 'Nunito', sans-serif;
+    content: 'twitter';
+    position: absolute;
+    bottom: -39px;
+    left: -19px;
+    font-size: 0.6em;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 7vh;
+    transform: scale(0);
+    transition: all 0.3s ease 0.5s;
+}
+.follow .social a .media .twitter:hover::after{
+    transform: scale(1);
+}
+
+.follow .social a .media .whatsapp::after{
+    font-family: 'Nunito', sans-serif;
+    content: 'whatsapp';
+    position: absolute;
+    bottom: -39px;
+    left: -19px;
+    font-size: 0.6em;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 7vh;
+    transform: scale(0);
+    transition: all 0.3s ease 0.5s;
+}
+.follow .social a .media .whatsapp:hover::after{
+    transform: scale(1);
+}
+
+.follow .social a .media .instagram::after{
+    font-family: 'Nunito', sans-serif;
+    content: 'instagram';
+    position: absolute;
+    bottom: -39px;
+    left: -19px;
+    font-size: 0.6em;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 7vh;
+    transform: scale(0);
+    transition: all 0.3s ease 0.5s;
+}
+.follow .social a .media .instagram:hover::after{
+    transform: scale(1);
+}
+
+.follow .social a .media .github::after{
+    font-family: 'Nunito', sans-serif;
+    content: 'github';
+    position: absolute;
+    bottom: -39px;
+    left: -19px;
+    font-size: 0.6em;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 7vh;
+    transform: scale(0);
+    transition: all 0.3s ease 0.5s;
+}
+.follow .social a .media .github:hover::after{
+    transform: scale(1);
+}
+
+.footer{
+    width: 100%;
+    height: auto;
+    background: #106efa;
+    font-family: 'Poppins', sans-serif;
+    /* clip-path: polygon(0 16%, 100% 0, 100% 100%, 0% 100%); */
+}
+.footer h1{
+    text-align: center;
+    font-size: 1.2em;
+    padding: 13px;
+    font-weight: 100;
+    color: #fff;
+}
+.footer h1 a{
+    color: #ffb109;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
 main{
     display: none;
 }
@@ -508,6 +857,11 @@ main{
         width: 62%;
     }
 }
+@media screen and (max-width: 858px) {
+    .about .card .same{
+        flex-direction: column-reverse;
+    }
+}
 @media screen and (max-width: 480px) {
     
     .loader img{
@@ -526,11 +880,80 @@ main{
     .comming h2{
         text-align: center;
     }
+    .about .card .lang a .circle{
+        width: 61px;
+        height: 61px;
+    }
+    .about .card{
+        width: 98%;
+    }
+    .contact .card{
+        width: 98%;
+    }
+    .projects .card{
+        width: 98%;
+    }
+    .contacts .card{
+        width: 98%;
+    }
+    .projects{
+        margin: 34px 0px;
+    }
+    .contacts{
+        margin: 34px 0px;
+    }
+    .home .social .media i{
+        margin: 20px 16px;
+    }
+    .about .card .lang{
+        margin: 12px;
+    }
+    .about .card .lang a .circle img{
+        width: 41px;
+    }
+}
+@media screen and (max-width: 532px) {
+    nav{
+        background: rgb(17 17 17);
+        flex-direction: column;
+        height: 7%;
+        overflow: hidden;
+    }
+    nav a{
+        transform: scale(0);
+    }
+    
+    nav #menu{
+        display: block;
+    }
+    .follow .social a .media i{
+        margin: 25px;
+    }
+}
+@media screen and (max-width: 506px){
+    .display h1{
+        font-size: 2.3em;
+    }
 }
 @media screen and (max-width: 374px) {
     
     html{
         font-size: 56%;
+    }
+    .display h1{
+        font-size: 2.3em;
+    }
+    .about .card .same p{
+        font-size: 1.6em;
+    }
+    .home .social .media i{
+        font-size: 1.3em;
+        width: 25px;
+        height: 25px;
+        margin: 29px 10px;
+    }
+    .projects .card .splide{
+        width: 100%;
     }
     
 .comming .main .info .countdown div{
