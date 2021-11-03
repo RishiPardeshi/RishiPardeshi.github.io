@@ -59,7 +59,7 @@ css.type = "text/css";
 css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
 document.body.appendChild(css);
 
-var countDownDate = new Date("Oct 4, 2021 10:00:00").getTime();
+var countDownDate = new Date("Nov 4, 2021 10:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
