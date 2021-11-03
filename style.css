@@ -516,9 +516,8 @@ background: #257bfd9e;
 }
 
 .comming{
-    overflow: hidden;
     width: 100%;
-    height: auto;
+    height: 100vh;
     z-index: 100000;
     display: flex;
     background-color: #111111;
